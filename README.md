@@ -1,5 +1,3 @@
-Readme · MD
-
 # nest-module-toggle
 
 Studi kasus pribadi: cara **mengaktifkan dan menonaktifkan ("mencabut") modul NestJS saat runtime lewat database**, tanpa restart dan tanpa redeploy. Contoh kasusnya adalah ERP dengan modul Product, Inventory, dan Sales.
@@ -30,7 +28,7 @@ SalesService -> Port (contracts) -> Gateway -> Resolver -> ModuleState (cache <-
                                     InventoryService | InventoryDisabledService
 ```
 
-> **DISABLED bukan berarti dihapus dari memory.** Semua class tetap hidup di DI container Nest. DISABLED hanya berarti: Resolver tidak lagi memilih modul itu, route-nya ditolak guard, dan pekerjaan background-nya seharusnya berhenti.
+> **DISABLED bukan berarti dihapus dari memory.** Semua class tetap hidup di DI container Nest. DISABLED hanya berarti: Resolver tidak lagi memilih modul itu, route-nya ditolak guard, dan pekerjaan background-nya seharusnya berhenti(dipelajari nanti).
 
 ## Konsep utama
 
